@@ -1,31 +1,23 @@
-/**
- * @author "Evgeny Reznichenko" <kusakyky@gmail.com>
- */
 
 var
     webpack = require('webpack');
 
 
 module.exports = {
-    name: 'webpack-hot-update',
-    entry: [
-        'webpack-dev-server/client',
-        'webpack/hot/only-dev-server',
-        './src/index.js'
-    ],
+    entry: './src/style.css',
     output: {
         path: './static/assets/',
-        filename: 'build.js',
-        publicPath: '/assets/'
+        filename: 'build.js'
     },
     module: {
         loaders: [
             {
-                test: /\.less$/,
-                loader: 'style!css!less-loader'
+                test: /\.css$/,
+                loader: 'style!css'
             }
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
