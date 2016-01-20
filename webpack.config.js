@@ -16,8 +16,5 @@ module.exports = {
                 loader: 'style!css'
             }
         ]
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
+    }
 };
